@@ -1,55 +1,0 @@
-10
-
-dir
-35
-svn://casareubw.com.br/school-admin/trunk/src/main/java/br/com/eng
-svn://casareubw.com.br
-
-
-
-2012-03-14T15:44:24.247704Z
-35
-nato
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3986fa5c-5835-11e1-9cd0-373831ee12f6
-
-utils
-dir
-
-interceptors
-dir
-
-connections
-dir
-
-interfaces
-dir
-
-services
-dir
-
-controllers
-dir
-
-daos
-dir
-
-beans
-dir
-
-annotations
-dir
-

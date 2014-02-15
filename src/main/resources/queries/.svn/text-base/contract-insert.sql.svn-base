@@ -1,4 +1,0 @@
-INSERT INTO contract 
-	(student_id, contratct_total_value, contract_entry_value, contract_begin_date, contract_end_date,
-	contract_monthly_payment_value, contract_alternative_payment_value, contract_dateCreated) 
-VALUES (?, ?, ?, ?, ?, ?, ?, now());
