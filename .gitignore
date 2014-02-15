@@ -2,6 +2,7 @@
 .classpath
 .project
 .settings
+.DS_Store
 database.xml
 
 # Package Files #
@@ -11,3 +12,4 @@ database.xml
 
 target/
 out/
+.idea/
