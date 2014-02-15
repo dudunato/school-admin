@@ -1,0 +1,15 @@
+<database-configuration>
+  <configuration>
+    <id>1</id>
+    <url>jdbc:mysql://yourhost:3306/schooladmin?autoReconnect=true</url>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <maxPoolSize>4</maxPoolSize>
+    <minPoolSize>1</minPoolSize>
+    <username>yourbduser</username>
+    <password>yourbdpass</password>
+    <checkTimeout>10000</checkTimeout>
+    <automaticTestTable>C3P0_TEST_TABLE</automaticTestTable>
+    <testConnectionOnCheckin>true</testConnectionOnCheckin>
+    <idleConnectionTestPeriod>60</idleConnectionTestPeriod>
+  </configuration>
+</database-configuration>

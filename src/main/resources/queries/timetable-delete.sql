@@ -1,0 +1,1 @@
+DELETE FROM timetable WHERE group_id = ? AND student_id = ?;

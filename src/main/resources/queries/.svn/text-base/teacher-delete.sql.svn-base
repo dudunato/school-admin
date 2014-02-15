@@ -1,0 +1,1 @@
+DELETE FROM teacher WHERE teacher_id = ?;

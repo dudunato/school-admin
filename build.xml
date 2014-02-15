@@ -1,0 +1,15 @@
+<project name="school-admin" basedir="." default="copy.modified.files.to.tomcat">
+
+	<property id="mvn.build.finalname" name="mvn.build.finalname" value="school-admin" />
+
+	<target name="copy.modified.files.to.tomcat" depends="tomcat.clean">
+		<copy verbose="true" todir="${basedir}/target/${mvn.build.finalname}" overwrite="true">
+			<fileset dir="${basedir}/src/main/webapp" />
+		</copy>
+	</target>
+
+	<target name="tomcat.clean">
+		<delete verbose="true" failonerror="false" dir="${basedir}/target/tomcat/work" />
+		<delete verbose="true" failonerror="false" dir="${basedir}/target/tomcat/logs" />
+	</target>
+</project>

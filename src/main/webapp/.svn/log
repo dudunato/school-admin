@@ -1,0 +1,13 @@
+<rm
+   name=".svn/prop-base/default.jsp.svn-revert"/>
+<modify-entry
+   committed-rev="109"
+   committed-date="2013-01-22T03:33:08.753477Z"
+   name="default.jsp"
+   checksum="a6471e44353dd453b0b9a26a7f28e01f"
+   last-author="nato"/>
+<delete-changelist
+   name="default.jsp"/>
+<committed
+   name="default.jsp"
+   revision="109"/>

@@ -1,0 +1,1 @@
+SELECT school_id FROM school s;

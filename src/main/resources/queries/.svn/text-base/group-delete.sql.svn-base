@@ -1,0 +1,1 @@
+DELETE FROM `group` WHERE group_id = ?;

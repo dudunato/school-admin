@@ -1,0 +1,301 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>School Admin</title>
+<link type="image/png" href="${pageContext.request.contextPath}/images/ico.png" rel="shortcut icon">
+<style type="text/css">
+@IMPORT url("${pageContext.request.contextPath}/css/cssreset.css");
+@IMPORT url("${pageContext.request.contextPath}/css/custom-theme/jquery-ui-1.8.16.custom.css");
+
+body {
+	background-color: #F1F1F1;
+}
+
+#main{ 
+	min-height: 100%; 
+	position: relative; 
+	height: auto; 
+}
+
+#header {
+	background: url("${pageContext.request.contextPath}/images/barratopo.png") repeat-x scroll 0 0;
+    height: 80px;
+    width: 100%;
+}
+
+
+#boxlogin {
+	width: 255px;
+	height: 51px;
+	float: right;
+	margin-top: 7px;
+	font-family: Verdana,Arial,sans-serif;
+	font-size: 13px;
+}
+
+#boxlogin a{
+	text-decoration: none;
+}
+
+#userlogged {
+	color: #003366;
+    display: block;
+    float: left;
+    margin-left: 50px;
+    margin-top: 16px;
+    width: 103px;
+}
+
+#onoff {
+    cursor: pointer;
+    display: block;
+    float: right;
+    margin-right: 46px;
+    margin-top: 16px;
+    color: #003366;
+    text-decoration: none;
+}
+
+
+#onoff:HOVER {
+    cursor: pointer;
+    display: block;
+    float: right;
+    margin-right: 46px;
+    margin-top: 16px;
+    color: #539FEC;
+    text-decoration: none;
+}
+
+#onoff:ACTIVE:HOVER {
+    cursor: pointer;
+    display: block;
+    float: right;
+    margin-right: 46px;
+    margin-top: 16px;
+    color: #003366;
+    text-decoration: none;
+}
+
+#content {
+	padding-bottom: 100px;
+}
+
+#footer {
+	background: url("${pageContext.request.contextPath}/images/barratopo.png") repeat-x scroll 0 0;
+	height: 80px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#menutab{
+	background-image: url("${pageContext.request.contextPath}/images/menutab.png");
+    background-position: 34px 0;
+    cursor: pointer;
+    float: left;
+    height: 149px;
+    margin-top: 36px;
+    position: absolute;
+    width: 34px;
+    z-index: 3;
+}
+
+#menutab:HOVER{
+	background-image: url("${pageContext.request.contextPath}/images/menutab.png");
+    background-position: -39px 0;
+    float: left;
+    height: 149px;
+    margin-top: 36px;
+    cursor: pointer;
+    position: absolute; 
+    width: 34px;
+    z-index: 3;
+}
+
+#menutab:ACTIVE:HOVER{
+	background-image: url("${pageContext.request.contextPath}/images/menutab.png");
+    background-position: 0px 0;
+    float: left;
+    height: 149px;
+    margin-top: 36px;
+    cursor: pointer;
+    position: absolute; 
+    width: 34px;
+    z-index: 3;
+}
+
+.ui-widget {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1.3em;
+}
+
+.ui-accordion {
+	width: 189px;
+	
+}
+
+.ui-accordion .ui-accordion-header a {
+	font-size:13px;
+}
+
+.ui-widget-content {
+    color: #003366;
+}
+
+.ui-widget-content a {
+    color: #003366;
+}
+
+#menu h3 {
+	height: 30px;
+}
+
+#menu div span {
+	margin-left: -20px;
+}
+
+#menu div span a:hover {
+	color: #539FEC;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    cursor: pointer;
+    margin: 0.5em 0.4em 0.5em 0;
+    font-size: 10px;
+}
+
+.block-text {
+	background: none repeat scroll 0 0 #CCCCCC !important;
+    border-color: #CECECE !important;
+}
+
+.block-button {
+	background: none repeat scroll 0 0 #CCCCCC !important;
+    border-color: #CECECE !important;
+}
+
+</style>
+<tiles:insertAttribute name="head" defaultValue="" />
+</head>
+<body>
+	
+	<div id="main">
+		<div id="header">
+		<div style="height: 80px;margin: auto;width: 1000px;">
+			<img style="display: block; float: left;margin-top: 11px;" alt="Brazilian Way" width="199" height="58" src="${pageContext.request.contextPath}/images/brazilianway_fundoClaro.png">
+			<div id="boxlogin">
+				<span id="userlogged"><span title="login" class="ui-icon ui-icon-person" style="float: left;margin-top: 0px;"></span><c:out value="${user.name}"></c:out></span>
+				<a href="${pageContext.request.contextPath}/login/signout"><span id="onoff"><span title="login" class="ui-icon ui-icon-power" style="float: left;margin-top: 1px;"></span>sair</span></a>
+			</div>
+		</div>		
+		</div>
+		
+		<div id="menu" style="float: left; margin-right: 0px; margin-top: 2%; position: absolute; z-index: 3; display: none;">
+			<h3><a href="#">Professores</a></h3>
+			<div>
+				<span style="display: block; font-size: 12px;"><a href="${pageContext.request.contextPath}/teacher/managerteachers">Gerenciar Professores</a></span>
+			</div>
+			<h3><a href="#">Alunos</a></h3>
+			<div>
+				<span style="display: block; font-size: 12px;"><a href="${pageContext.request.contextPath}/students/managerstudents">Gerenciar Alunos</a></span>
+				<span style="display: block; font-size: 12px;"><a href="${pageContext.request.contextPath}/students/managerstudentse">Alunos Inativos/Exp.</a></span>
+			</div>
+			<h3><a href="#">Contratos</a></h3>
+			<div>
+				<span style="display: block; font-size: 12px;"><a href="${pageContext.request.contextPath}/contracts/managercontracts">Gerenciar Contratos</a></span>
+			</div>
+			<h3><a href="#">Turmas</a></h3>
+			<div>
+				<span style="display: block; font-size: 12px;"><a href="${pageContext.request.contextPath}/group/managergroup">Gerenciar Turmas</a></span>
+			</div>
+			<h3><a href="#">Grade de Hor&aacute;rios</a></h3>
+			<div>
+				<span style="display: block; font-size: 12px;"><a href="${pageContext.request.contextPath}/timetable/managertimetable">Grade Alunos</a></span>
+				<span style="display: block; font-size: 12px;"><a href="${pageContext.request.contextPath}/timetableExp/managertimetableexp">Grade - Alunos Exp.</a></span>
+<%-- 				<span style="display: block; font-size: 12px;"><a href="${pageContext.request.contextPath}/timetableVip/managertimetablevip">Grade Horária VIP</a></span> --%>
+			</div>
+			<h3><a href="#">Configurações</a></h3>
+			<div>
+				<span style="display: block; font-size: 12px;"><a href="#"></a></span>
+			</div>
+		</div>
+		<div id="menutab">
+		</div>
+		
+		<div id="content">
+			<tiles:insertAttribute name="content" defaultValue="" />
+			<div id="boxMsg" title="Alerta">
+				<span id="msgDesc" style="display: block;margin: 30px auto auto;width: 185px;"></span>
+				<img id="loader" style="display: none;margin: 12px auto auto;" alt="..." height="16" width="16" src="${pageContext.request.contextPath}/images/ajax-loader.gif">
+			</div>
+		</div>
+		
+		<div id="footer">
+			<span style=" color: #003366;display: block;font-family: Verdana,Arial,sans-serif;font-size: 10px;font-weight: bold;margin: 33px auto auto;width: 190px;">©2012 Brasilian Way by Casar&eacute;u</span>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/djr.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		$("td a, input:button").button();
+		$("#menu").show();
+		$("#menu").accordion({event: "mouseover"});
+		$("#menu").hide();
+		
+		$('#menutab').toggle(
+				function (){
+					$('#menutab').css('margin-left','189px');
+					$('#menu').show();
+				},
+				function (){
+					$('#menutab').css('margin-left','0px');
+					$('#menu').hide();
+				}
+		);
+	});
+	
+	function enableCombo(id) {
+		var input = $(id).children('span').children('input');
+		var button = $(id).children('span').children('button');
+		
+		input.prop("disabled", false);
+		button.prop("disabled", false);
+	    input.removeClass('block-text');
+	    button.removeClass('block-button');
+	    input.focus();
+	}
+
+	function disableCombo(id) {
+		var input = $(id).children('span').children('input');
+		var button = $(id).children('span').children('button');
+		
+		input.val('');
+		input.prop("disabled", true);
+		button.prop("disabled", true);
+	    input.addClass('block-text');
+	    button.addClass('block-button');    
+	}
+	
+	function lockSetButton(){
+		$('.ui-dialog-buttonset').children('button').prop("disabled", true);
+		$('.ui-dialog-buttonset').children('button').addClass('block-button');
+	}
+	
+	function unlockSetButton(){
+		$('.ui-dialog-buttonset').children('button').prop("disabled", false);
+		$('.ui-dialog-buttonset').children('button').removeClass('block-button');
+	}
+	</script>
+	<tiles:insertAttribute name="js" defaultValue="" />
+</body>
+</html>

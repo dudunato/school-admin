@@ -1,0 +1,13 @@
+*.class
+.classpath
+.project
+.settings
+database.xml
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+target/
+out/
